@@ -58,15 +58,18 @@ describe('Visual monitor testing', function() {
     shoovWebdrivercss.after(done);
   });
 
-  it('should show the home page',function(done) {
+  it('should show the about-undg page',function(done) {
     client
-      .url(baseUrl)
-      .webdrivercss(testName + '.homepage', {
+      .url(baseUrl + '/home/about-undg/')
+      //.execute(function() {
+      //  jQuery('#Single_coverImageWrapper img').attr('src', 'https://cloud.githubusercontent.com/assets/5812423/12973589/1c0aea58-d0b6-11e5-8d48-7200c298180a.jpg')
+      //})
+      .webdrivercss(testName + '.about-undg', {
         name: '1',
         exclude: [],
         remove: [],
         hide: [],
-        screenWidth: selectedCaps == 'chrome' ? [640, 960, 1200] : undefined,
+        screenWidth: selectedCaps == 'chrome' ? [960] : undefined,
       }, resultsCallback)
       .call(done);
   });
